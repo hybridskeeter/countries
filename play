@@ -1,0 +1,3 @@
+cp capitals.csv bin/
+cd bin
+java countries/Game
