@@ -1,23 +1,36 @@
 package countries;
 
 import java.io.Console;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 
-public class Game {
-
-	private static final String CAPITAL = "Canberra";
-
+class Game {
 	public static void main(String[] args) {
-		System.out.println("Welcome to the capitals game");
-		
+		System.out.println("Capitals game");
 		Console console = System.console();
-		
-		String ans = console.readLine("What is the capital of Australia?", null);
-		
-		if(ans.equalsIgnoreCase(CAPITAL)){
-			System.out.println("Correcto!");
-		}else{
-			System.out.println("No, the answer is " + CAPITAL);
+		BufferedReader br = null;
+		try {
+			br = new BufferedReader(new FileReader("capitals.csv"));
+			String line;
+			while ((line = br.readLine()) != null) {
+				String[] cols = line.split(",");
+				String country = cols[0];
+				String capital = cols[1];
+				String answer = console.readLine("What is the capital of " + country + "? ", null);
+				if (answer.equalsIgnoreCase(capital)) {
+					System.out.println("Correct!");
+				}
+				else {
+					System.out.println("No, the answer is " + capital);	
+				}
+			}
+		}
+	catch (FileNotFoundException e) {
+		e.printStackTrace();
+		} catch (IOException e) {
+		e.printStackTrace();
 		}
 	}
-
 }
