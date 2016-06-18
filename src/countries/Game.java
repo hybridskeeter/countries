@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
 class Game {
 	public static void main(String[] args) {
 		System.out.println("Guess the capital city");
-		System.out.println("Enter 'exit' to stop the game")
+		System.out.println("Enter 'exit' to stop the game");
 		Console console = System.console();
 		
 		int total = 0;
@@ -19,7 +19,6 @@ class Game {
 			
 			String line;
 			while ((line = br.readLine()) != null) {
-				total++;
 				String[] cols = line.split(",");
 				String country = cols[0];
 				String capital = cols[1];
@@ -36,6 +35,7 @@ class Game {
 					
 					System.out.println("No, the answer is " + capital);	
 				}
+				total++;
 			}
 		}
 	catch (FileNotFoundException e) {
