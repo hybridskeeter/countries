@@ -1,0 +1,2 @@
+read in data from disk
+add more countries
