@@ -10,15 +10,15 @@ class Game {
 	public static void main(String[] args) {
 		System.out.println("Capitals game");
 		Console console = System.console();
-		BufferedReader br = null;
-		try {
-			br = new BufferedReader(new FileReader("capitals.csv"));
+
+		try (BufferedReader br = new BufferedReader(new FileReader("capitals.csv"))) {
+			
 			String line;
 			while ((line = br.readLine()) != null) {
 				String[] cols = line.split(",");
 				String country = cols[0];
 				String capital = cols[1];
-				String answer = console.readLine("What is the capital of " + country + "? ", null);
+				String answer = console.readLine("What is the capital of " + country + "? ");
 				if (answer.equalsIgnoreCase(capital)) {
 					System.out.println("Correct!");
 				}
