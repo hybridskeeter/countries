@@ -4,7 +4,7 @@ import java.io.Console;
 
 public class Game {
 
-	private static final String CAPITAL = "Sydney";
+	private static final String CAPITAL = "Canberra";
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the capitals game");
