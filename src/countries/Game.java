@@ -8,7 +8,8 @@ import java.io.FileNotFoundException;
 
 class Game {
 	public static void main(String[] args) {
-		System.out.println("Capitals game");
+		System.out.println("Guess the capital city");
+		System.out.println("Enter 'exit' to stop the game")
 		Console console = System.console();
 		
 		int total = 0;
@@ -27,8 +28,12 @@ class Game {
 					System.out.println("Correct!");
 					correct++;
 					
+				} else if(answer.equalsIgnoreCase("exit")){
+					break; //quit the while loop
 				}
 				else {
+					
+					
 					System.out.println("No, the answer is " + capital);	
 				}
 			}
