@@ -1,1 +1,5 @@
-placeholder doc
+Capital City Guessing Game
+--------------------------
+Type "play" to play the game.
+You will be asked a series of questions about countries and their capital cities.
+Answer as many as you can. Good luck!d
